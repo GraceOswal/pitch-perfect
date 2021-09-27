@@ -9,6 +9,4 @@ def create_app(config_name):
 
 # initialize init file
 bootstrap.init_app(app)
-db.init_app(app)
-
-#
+db.init_

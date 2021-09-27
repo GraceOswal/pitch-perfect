@@ -11,4 +11,3 @@ def create_app(config_name):
 bootstrap.init_app(app)
 db.init_app(app)
 
-#
