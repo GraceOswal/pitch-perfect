@@ -1,4 +1,7 @@
 from . import db
+from werkzeug.security import check_password_hash, generate_password_hash
+import datetime
+from sqlalchemy.sql.functions import current_user
 
 # connect class user to pitchperfect database
 
@@ -28,8 +31,8 @@ class User(db.Model):
         return f'User: {self.username}'
 
     @login_manager.user_loader
-def user_loader(user_id):
-    return User.query.get(user_id)
+    def user_loader(user_id):
+        return User.query.get(user_id)
 
 
 class Post(db.Model):
